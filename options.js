@@ -45,7 +45,6 @@ function addCountryToBlacklist(countryName) {
 }
 
 function removeCountryFromBlackList(countryName) {
-    alert('remove ' + countryName);
     chrome.storage.sync.get('hiddenCountries', function(data) {
         var arrayOfHiddenCountriesInStorage = data.hiddenCountries;
         let indexOfItemToRemove = arrayOfHiddenCountriesInStorage.indexOf(countryName)
