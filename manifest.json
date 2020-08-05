@@ -16,7 +16,7 @@
             "https://*.upwork.com/*"
         ],
         "js": [
-            "mark-liked-jobs.js"
+            "on-scroll-actions.js"
         ]
     }],
     "options_page": "options.html",
