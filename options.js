@@ -41,7 +41,15 @@ function listHiddenCountries() {
 }
 
 function addCountryToBlacklist(countryName) {
-    alert('add ' + countryName.value);
+    chrome.storage.sync.get('hiddenCountries', function(data) {
+        var arrayOfHiddenCountriesInStorage = data.hiddenCountries;
+        arrayOfHiddenCountriesInStorage.push(countryName.value);
+        arrayOfHiddenCountriesInStorage.sort(function(a, b) {
+            return a.toLowerCase().localeCompare(b.toLowerCase());
+        });
+        chrome.storage.sync.set({ hiddenCountries: arrayOfHiddenCountriesInStorage });
+    });
+    location.reload();
 }
 
 function removeCountryFromBlackList(countryName) {
