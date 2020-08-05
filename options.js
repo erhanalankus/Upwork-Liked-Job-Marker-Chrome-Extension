@@ -8,7 +8,7 @@ function setHideFunctionality() {
 function setRemoveFunctionality() {
     let buttonsArray;
     setTimeout(() => {
-        buttonsArray = convertToArray();
+        buttonsArray = getRemoveCountryButtonsAsArray();
         buttonsArray.forEach(button => {
             button.addEventListener('click', function() {
                 removeCountryFromBlackList(button.getAttribute("countryName"));
@@ -16,13 +16,11 @@ function setRemoveFunctionality() {
         });
     });
 
-    function convertToArray() {
-        let removeCountryButtons = document.getElementsByClassName("remove-country-button");
-        let array = Array.from(removeCountryButtons);
-        return array;
+    function getRemoveCountryButtonsAsArray() {
+        let removeCountryButtonsHtmlCollection = document.getElementsByClassName("remove-country-button");
+        let removeCountryButtonsArray = Array.from(removeCountryButtonsHtmlCollection);
+        return removeCountryButtonsArray;
     }
-
-
 }
 
 function listHiddenCountries() {
