@@ -45,7 +45,18 @@ function addCountryToBlacklist(countryName) {
 }
 
 function removeCountryFromBlackList(countryName) {
-    alert('remove ' + countryName)
+    alert('remove ' + countryName);
+    chrome.storage.sync.get('hiddenCountries', function(data) {
+        var arrayOfHiddenCountriesInStorage = data.hiddenCountries;
+        let indexOfItemToRemove = arrayOfHiddenCountriesInStorage.indexOf(countryName)
+        if (indexOfItemToRemove < 0) {
+            alert("Error. Country not found in storage.");
+            return;
+        }
+        arrayOfHiddenCountriesInStorage.splice(indexOfItemToRemove, 1);
+        chrome.storage.sync.set({ hiddenCountries: arrayOfHiddenCountriesInStorage });
+    });
+    location.reload();
 }
 
 setHideFunctionality();
