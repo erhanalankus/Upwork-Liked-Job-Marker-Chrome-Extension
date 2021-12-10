@@ -10,6 +10,10 @@ chrome.runtime.onInstalled.addListener(function() {
         "Saudi Arabia",
         "Cyprus",
         "Pakistan",
+        "Ghana",
+        "Oman",
+        "Mexico",
+        "Turkey",
         
     ];
     chrome.storage.sync.set({ hiddenCountries: initiallyHiddenCountries });
