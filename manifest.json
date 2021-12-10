@@ -1,10 +1,7 @@
 {
     "name": "Upwork Liked Job Marker",
-    "version": "1.2",
+    "version": "1.2.1",
     "description": "Marks the liked jobs on upwork.com job feed, by giving them a light green background color.",
-    "permissions": [
-        "storage"
-    ],
     "content_scripts": [{
         "matches": [
             "https://*.upwork.com/*"
