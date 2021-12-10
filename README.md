@@ -1,5 +1,5 @@
 # Upwork-Liked-Job-Marker-Chrome-Extension
-Marks the liked jobs on upwork.com job feed, by giving them a light green background color. Also hides job listings from selected countries(see extension options).
+Marks the liked jobs on upwork.com job feed, by giving them a light green background color.
 
 [Install using Chrome Web Store](https://chrome.google.com/webstore/detail/upwork-liked-job-marker/jkaifkineoffneaimpnpnhpcaddknpfo)
 
